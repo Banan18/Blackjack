@@ -10,10 +10,33 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="111dp"
-        tools:layout_editor_absoluteY="99dp"
+        android:onClick="buttonClickDraw"
+        android:text="Взять карту"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="Новая игра"
+        android:onClick="buttonClickNewGame"
+        app:layout_constraintStart_toEndOf="@+id/button"
+        tools:layout_editor_absoluteY="16dp"
         tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Стоп"
+        android:onClick="buttonClickStop"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="16dp" />
 
 </android.support.constraint.ConstraintLayout>
 

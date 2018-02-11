@@ -6,48 +6,48 @@ import java.util.Random;
  * Created by Banan on 09.02.2018.
  */
 
-public class LogicsDiler {
+public class LogicsDiler implements Logics {
 
-    private int cardValue;
+    private int cardValue = 0;
     private Deck deck;
     private Random random;
     private Deck dilerDeck = new Deck();
+    private String trueFalse;
 
-    public LogicsDiler(Deck deck){
+    public LogicsDiler(Deck deck) {
 
         this.deck = deck;
 
     }
 
-    public String playLogicDiler(){
 
+    @Override
+    public String newGameLogics() {
         dilerDeck.draw(deck);
         dilerDeck.draw(deck);
-
         cardValue = dilerDeck.cardsValue();
-        drawCardDiler();
-        return dilerDeck.toString()+" Ox4u "+dilerDeck.cardsValue();
+        return dilerDeck.toString();
     }
 
-     private boolean drawCardDiler(){
-        boolean drawChoice = false;
-        if (cardValue < 10){
-            drawChoice = true;
+    @Override
+    public String drawCard() {
+        if (cardValue < 10) {
+
             dilerDeck.draw(deck);
-        }
-        else {
-            if (cardValue >= 10 && cardValue <= 16 && getRandomBoolean()){
+        } else {
+            if (cardValue >= 10 && cardValue <= 16 && getRandomBoolean()) {
                 dilerDeck.draw(deck);
-
-
             }
         }
-        return drawChoice ;
+        return dilerDeck.toString();
     }
+    public int getResultValue(){
+        return dilerDeck.cardsValue();
+    }
+    public String getCard(){return dilerDeck.toString();}
 
-    public boolean getRandomBoolean(){
+    public boolean getRandomBoolean() {
         random = new Random();
         return random.nextBoolean();
     }
-
 }

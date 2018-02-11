@@ -4,15 +4,19 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.widget.Toast;
+import android.view.View;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements ViewGame {
+
     Context context = MainActivity.this;
+    Presenter presenter = new Presenter(this);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
 
 
@@ -23,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
      //   Log.d("Card",deck.toString());
 
     //    Deck deckPlayer = new Deck();
-        Presenter deckDiler = new Presenter();
+
 
       //  deckPlayer.draw(deck);
       //  deckPlayer.draw(deck);
@@ -34,21 +38,50 @@ public class MainActivity extends AppCompatActivity {
 
       //  Toast.makeText(context,deckPlayer.toString(),Toast.LENGTH_LONG).show();
      //   Log.d("player",deckPlayer.toString());
-        Log.d("dil",deckDiler.diler());
-        Log.d("pla",deckDiler.player());
+
+
+
+    }
+
+    public void buttonClickDraw(View view) {
+
+        presenter.clickDrawButton();
+
 
 
     }
 
-    void showWinMessage() {
-        Toast.makeText(context, "Вы выиграли", Toast.LENGTH_LONG).show();
+    public void buttonClickNewGame(View view) {
+
+        presenter.startGame();
     }
 
-    void showGameOverMessage() {
-        Toast.makeText(context, "Вы проиграли", Toast.LENGTH_LONG).show();
+    public void buttonClickStop(View view) {
+
+        presenter.clickStopButton();
     }
 
-    void createNewGame() {
+    @Override
+    public void showCreateGame() {
+        Log.d("game", presenter.resultCard());
 
     }
+
+    @Override
+    public void showProcessGame() {
+        Log.d("game",presenter.resultCard());
+    }
+
+    @Override
+    public void showWin() {
+        Log.d("game","Выйграл игрок");
+    }
+
+    @Override
+    public void showGameOver() {
+        Log.d("game","Выйграл дилер");
+
+    }
+
+
 }

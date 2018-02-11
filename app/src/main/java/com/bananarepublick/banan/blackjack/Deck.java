@@ -10,6 +10,7 @@ import java.util.Random;
 public class Deck {
 
     private ArrayList<Card> cards;
+    private int originalSizeDeck = 20;
 
     public Deck() {
         this.cards = new ArrayList<Card>();
@@ -63,8 +64,9 @@ public class Deck {
     }
 
     void draw(Deck coming) {
-        this.cards.add(coming.getCard(0));
-        coming.removeCard(0);
+           this.cards.add(coming.getCard(0));
+           coming.removeCard(0);
+
     }
 
     public int cardsValue() {
