@@ -1,5 +1,7 @@
 package com.bananarepublick.banan.blackjack;
 
+import java.util.ArrayList;
+
 /**
  * Created by Banan on 09.02.2018.
  */
@@ -24,12 +26,14 @@ public class LogicsPlayer implements Logics {
         return playerDeck.toString();
     }
 
-    @Override
-    public String drawCard() {
+
+    public void drawCard() {
         if (playerDeck.cardsValue() < 21) {
             playerDeck.draw(deck);
         }
-        return playerDeck.toString();
+    }
+    public ArrayList getImageCard(){
+       return playerDeck.cardsImage();
     }
     public String getCard(){return playerDeck.toString();}
     public int getResultValue(){

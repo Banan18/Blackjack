@@ -6,5 +6,5 @@ package com.bananarepublick.banan.blackjack;
 
 public interface Logics {
      String newGameLogics();
-     String drawCard();
+
 }

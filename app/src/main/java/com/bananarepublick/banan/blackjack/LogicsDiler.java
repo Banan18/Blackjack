@@ -29,17 +29,19 @@ public class LogicsDiler implements Logics {
         return dilerDeck.toString();
     }
 
-    @Override
-    public String drawCard() {
+
+    public boolean drawCard() {
+        boolean choice = false;
         if (cardValue < 10) {
 
             dilerDeck.draw(deck);
         } else {
             if (cardValue >= 10 && cardValue <= 16 && getRandomBoolean()) {
                 dilerDeck.draw(deck);
+                choice = true;
             }
         }
-        return dilerDeck.toString();
+        return choice ;
     }
     public int getResultValue(){
         return dilerDeck.cardsValue();
