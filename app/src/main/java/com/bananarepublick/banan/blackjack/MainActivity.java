@@ -180,7 +180,7 @@ public class MainActivity extends AppCompatActivity implements ViewGame {
 
 
     }
-
+// хотел использовать SurfaceView, но времени не хватило
     @Override
     public void setImage(ArrayList playerId,ArrayList dilerID,ArrayList playerTwo) {
         for (int i = 0;i <playerId.size();i++){
