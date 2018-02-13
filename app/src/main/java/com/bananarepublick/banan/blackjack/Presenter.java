@@ -78,7 +78,7 @@ public class Presenter {
 
         return "Дилер " + logicsDiler.getCard() + "\n" + "Игрок " + logicsPlayer.getCard()+"\n"+"Игрок 2 "+logicsPlayerTwo.getCard();
     }
-
+// с логикой беда
     public void resultValue() {
         valuePlayer = logicsPlayer.getResultValue();
         valueDiler = logicsDiler.getResultValue();
