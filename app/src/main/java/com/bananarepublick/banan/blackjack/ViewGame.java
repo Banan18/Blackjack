@@ -11,6 +11,8 @@ public interface ViewGame {
     void showProcessGame();
     void showWin();
     void showGameOver();
-    void setImage(ArrayList imageID);
+    void setImage(ArrayList playerID,ArrayList dilerID,ArrayList playerTwo);
     void nullImage();
+    void showWinTwo();
+    void showGameOverTwo();
 }

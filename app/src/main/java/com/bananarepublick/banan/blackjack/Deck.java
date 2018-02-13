@@ -12,7 +12,7 @@ import java.util.Random;
 public class Deck {
 
     private ArrayList<Card> cards;
-    private int originalSizeDeck = 20;
+    private int numCard = 52;
 
     public Deck() {
         this.cards = new ArrayList<Card>();
@@ -27,6 +27,16 @@ public class Deck {
             }
         }
 
+    }
+// игра со дной колоды
+    public void numDeck(){
+        if (numCard< 18 || numCard == 52){
+            createFullDeck();
+            shuffle();
+            numCard = 52;
+        }else{
+            shuffle();
+        }
     }
 
     // Перетосовка карт
@@ -66,8 +76,11 @@ public class Deck {
     }
 
     void draw(Deck coming) {
+
         this.cards.add(coming.getCard(0));
         coming.removeCard(0);
+        numCard--;
+        Log.d("num", String.valueOf(numCard));
 
     }
 

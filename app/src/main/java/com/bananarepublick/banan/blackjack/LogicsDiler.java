@@ -1,5 +1,6 @@
 package com.bananarepublick.banan.blackjack;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 /**
@@ -11,12 +12,14 @@ public class LogicsDiler implements Logics {
     private int cardValue = 0;
     private Deck deck;
     private Random random;
-    private Deck dilerDeck = new Deck();
+    private Deck dilerDeck;
     private String trueFalse;
 
     public LogicsDiler(Deck deck) {
 
         this.deck = deck;
+        dilerDeck = new Deck();
+
 
     }
 
@@ -27,6 +30,12 @@ public class LogicsDiler implements Logics {
         dilerDeck.draw(deck);
         cardValue = dilerDeck.cardsValue();
         return dilerDeck.toString();
+    }
+
+    @Override
+    public ArrayList getImageCard() {
+
+        return dilerDeck.cardsImage();
     }
 
 
@@ -43,9 +52,11 @@ public class LogicsDiler implements Logics {
         }
         return choice ;
     }
+    @Override
     public int getResultValue(){
         return dilerDeck.cardsValue();
     }
+    @Override
     public String getCard(){return dilerDeck.toString();}
 
     public boolean getRandomBoolean() {

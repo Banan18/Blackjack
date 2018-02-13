@@ -35,6 +35,8 @@ public class LogicsPlayer implements Logics {
     public ArrayList getImageCard(){
        return playerDeck.cardsImage();
     }
+
+
     public String getCard(){return playerDeck.toString();}
     public int getResultValue(){
         return playerDeck.cardsValue();
